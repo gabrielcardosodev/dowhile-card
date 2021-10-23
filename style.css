@@ -1,0 +1,119 @@
+:root {
+  --gray: hsl(240, 9%, 89%);
+  --black: hsl(240, 6%, 13%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html,
+body {
+  height: 100%;
+
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: hsl(240, 6%, 4%);
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background: url(./images/background-mobile.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
+}
+
+.container {
+  max-width: 250px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--gray);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative;
+}
+
+.avatar span {
+  position: absolute;
+  top: -15px;
+  z-index: 1;
+  animation: spin 8s linear infinite;
+}
+
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  transition: all 0.6s ease;
+}
+
+.avatar > img:hover {
+  transform: rotate(-360deg);
+}
+
+h1 {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+a {
+  margin-top: 0.25rem;
+  color: var(--gray);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+.social {
+  margin: 4rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.social li a {
+  transition: 0.3s;
+}
+
+.social li a:hover {
+  transform: translateY(-8px);
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    background: url(./images/background-desktop.svg) no-repeat center/cover;
+    width: 25rem;
+    height: 80vh;
+    position: absolute;
+    top: -3rem;
+  }
+
+  .container {
+    margin: 17rem auto;
+  }
+}
